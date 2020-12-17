@@ -1,0 +1,15 @@
+{
+  "name": "bmm-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bmm-cli":"bmm"
+  },
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "bmm":"./index.js"
+  }
+}
