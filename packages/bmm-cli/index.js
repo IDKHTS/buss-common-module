@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-console.log("abaabaaba,cli is coming for you");
+console.log("bmm-cli is coming for you,hey hey ...");
 
 // 获取参数
 var config = {};
@@ -56,6 +56,6 @@ function mkdir (path, fn) {
 var PATH = ".";
 mkdir(PATH+'/vue',function(){
 	// mkdir(PATH + '/vue',function () {
-		checkDirectory(__dirname+'/templates/vue-project',PATH+'/vue',copy);
+		checkDirectory(__dirname+'/templates/init-project',PATH+'/vue',copy);
 	// })
 })
