@@ -4,7 +4,7 @@ import { queryDssxConfig, queryDssxUInfo, querySSOUinfo } from './api/login'
 import { GlobalData } from './global-data'
 import { eventBus, listenType,isDoneInit } from './event-bus'
 // import dialog from '@/common/dialog'
-const domainConfig = require('../domain-config-local')
+const domainConfig = require('./domain-config-local')
 
 const logger = new Logger('common/permission')
 const globalData = GlobalData
