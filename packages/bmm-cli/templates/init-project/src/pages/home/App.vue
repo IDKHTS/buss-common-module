@@ -7,112 +7,52 @@
       <div id="nav">
         <router-link to="/">
           Home
-        </router-link> |
+        </router-link>
+        |
         <router-link to="/about">
           About
         </router-link>
       </div>
+      <p>你好, {{ usr }}</p>
+      <p>
+        是否预览模式, {{ isPreviewMode }}
+        <br />
+        <span v-if="isPreviewMode">
+          当前用户:{{ currUser }}
+          <br />
+          登录用户:{{ loginUser }}
+        </span>
+      </p>
+
       <router-view />
-      <button v-on:click="showMsg">
-        xxxx
-      </button>
     </div>
   </div>
 </template>
 <script>
-
+import { isDoneInit, GlobalData } from "bmm-config-init";
 export default {
-  name: 'App',
-  components: {
-  },
-  data: function () {
+  name: "App",
+  components: {},
+  data: function() {
     return {
-      baseSideControl: {
-        top: {
-          title: '交易管理',
-          href: '/oms.html',
-        },
-        bases: [{
-          title: '起草信用保障订单',
-          href: '/draft-trusts.html',
-        }, {
-          title: '所有订单',
-          href: '/oms.html',
-        }],
-        menus: [{
-          title: '订单管理',
-          items: [{
-            title: '评价管理',
-            href: '',
-          }, {
-            title: '退款管理',
-            href: '/6666',
-          }, {
-            title: '运费模板',
-            href: '',
-          }, {
-            title: '订单回收站',
-            href: '',
-          }],
-        }, {
-          title: '交易服务',
-          items: [{
-            title: '信用保障服务介绍',
-            href: '',
-          }, {
-            title: '额度管理',
-            href: '',
-          }],
-        }, {
-          title: '增值服务',
-          items: [{
-            title: '验货服务',
-            href: '',
-          }, {
-            title: '生产跟进服务',
-            href: '',
-          }, {
-            title: '备货融资',
-            href: '',
-          }, {
-            title: '无忧赊',
-            href: '',
-          }, {
-            title: '尾款保障服务',
-            href: '',
-          }, {
-            title: '信用证融资',
-            href: '',
-
-            items: [{
-              title: '验货服务1',
-              href: '',
-            }],
-          }],
-        }],
-      },
-    }
+      usr: "",
+      isPreviewMode: false,
+      currUser: "",
+      loginUser: ""
+    };
   },
-  methods: {
-    confirm () {
-      console.log('xxxxxxx')
-    },
-    discard () {
-      console.log('discard')
-    },
-    cancelSketch () {
-      console.log('cancel')
-    },
-    showMsg () {
-      // showSketchMsg(this.confirm)
-      this.$refs.BaseSketchModal.showModal()
-    },
-  },
-  created(){
-    console.log('init')
-    
+  created() {
+    console.log("init");
+    isDoneInit().then(() => {
+      console.log(GlobalData);
+      this.usr = GlobalData.DSSX.currUser.usr.attrs.basic.nickName;
+      this.isPreviewMode = GlobalData.DSSX.attr.isPreviewMode;
+      this.currUser = GlobalData.DSSX.currUser.usr.attrs.basic.nickName;
+      this.loginUser = GlobalData.DSSX.uinfo.usr.attrs.basic.nickName;
+      console.log(this.usr);
+    });
   }
-}
+};
 </script>
 <style lang="less">
 #container {

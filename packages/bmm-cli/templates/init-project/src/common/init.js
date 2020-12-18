@@ -15,7 +15,7 @@
 */
 
 import { chromeonly } from './chromeonly'
-import { permissionInit } from './permission'
+import { permissionInit } from 'bmm-config-init'
 // import { trainingMissionInit } from './training-mission/training-mission'
 
 const isMock = process.env.VUE_APP_MOCK

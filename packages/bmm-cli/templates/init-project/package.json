@@ -10,8 +10,9 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "compression-webpack-plugin": "6.0.3",
     "axios": "^0.20.0",
+    "bmm-config-init": "^0.0.4",
+    "compression-webpack-plugin": "6.0.3",
     "core-js": "^3.6.5",
     "mitt": "^2.1.0",
     "vue": "^2.6.11",

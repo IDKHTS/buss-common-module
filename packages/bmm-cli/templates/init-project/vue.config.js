@@ -1,22 +1,11 @@
-// const path = require('path')
 const domainConfig = require('./config/domain-config-local')
 const glob = require('glob')
 const CompressionPlugin = require('compression-webpack-plugin')
-
-// 打包性能可视化 npm run build加--report参数即可 https://www.npmjs.com/package/webpack-bundle-analyzer
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 // 配置pages多页面获取当前文件夹下的html和js
 function getEntry (globPath) {
   const entries = {}
   glob.sync(globPath).forEach(function (entry) {
-    // const basename = entry.split('/').slice(-2)[0]
-    // entries[basename] = {
-    //   entry: 'src/pages/' + basename + '/main.js',
-    //   template: 'src/pages/' + basename + '/index.html',
-    //   filename: basename + '.html',
-    //   title: require('./src/pages/' + basename + '/config.js').title,
-    // }
 
     /**
      * 本地时：
