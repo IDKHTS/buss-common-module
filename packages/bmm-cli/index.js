@@ -2,6 +2,8 @@
 console.log("bmm-cli is coming for you,hey hey ...");
 
 const { program } = require('commander')
+const fs = require("fs");
+const path = require("path");
 
 
 program
@@ -22,9 +24,6 @@ program
 program.parse(process.argv);
 
 
-
-var fs = require("fs");
-var path = require("path");
 
 
 // 复制目录
