@@ -17,7 +17,7 @@
 全局安装:
 
 - 安装`npm i bmm-cli -g`
-- 执行命令`bmm`即可
+- 执行命令`bmm create <name>` 即可,`<name>`为项目名称
 
 
 

@@ -1,6 +1,24 @@
 ## ChangeLog 
 
-###  0.0.7
+###  v0.0.10
+
+- cli 包create命令需要提供名称
+
+
+###  v0.0.9
+
+- 修复cli 包命令不起作用问题
+
+
+
+###  v0.0.8
+
+- cli 包引入commander.js
+- 支持版本查看和create创建命令
+
+
+
+###  v0.0.7
 
 - 添加README.md
 - 添加CHNAGELOG.md
