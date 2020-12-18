@@ -324,6 +324,7 @@ function loginHandle (info, token) {
       logger.log('受限用户不能访问')
 
       // 其它，跳至受限页
+      // TODO: 这个暴露或者直接写
       const pagePathName = '/buy-guidance.html'
       if (pagePathName === location.pathname) {
         return
@@ -354,7 +355,7 @@ function appFatalErrorHandler () {
   msg += JSON.stringify({ Error: AppError.fatalErrorSet, localTimeStamp: Date.now() })
 
   logger.error(msg)
-  // todo : 抽离dialog
+  // TODO : 抽离dialog
 //   dialog.errConfirm({ content: msg })
 }
 
