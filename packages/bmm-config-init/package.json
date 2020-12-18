@@ -1,6 +1,6 @@
 {
   "name": "bmm-config-init",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "0.20.0",
-    "bmm-logger": "^0.0.9",
+    "bmm-logger": "^0.0.10",
     "mitt": "2.1.0"
   }
 }
