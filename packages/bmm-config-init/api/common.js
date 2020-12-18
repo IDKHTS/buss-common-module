@@ -3,7 +3,7 @@ import { Logger } from 'bmm-logger'
 import * as util from '../util'
 import { GlobalData } from '../global-data'
 
-const domainConfig = require('../config/domain-config-local')
+const domainConfig = require('../domain-config-local')
 
 const logger = new Logger('common/api/common')
 

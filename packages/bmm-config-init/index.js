@@ -2,8 +2,9 @@ import * as util from './util'
 import { Logger } from 'bmm-logger'
 import { queryDssxConfig, queryDssxUInfo, querySSOUinfo } from './api/login'
 import { GlobalData } from './global-data'
-import { eventBus, listenType } from '@/common/event-bus'
+import { eventBus, listenType,isDoneInit } from './event-bus'
 // import dialog from '@/common/dialog'
+const domainConfig = require('../domain-config-local')
 
 const logger = new Logger('common/permission')
 const globalData = GlobalData
@@ -380,4 +381,4 @@ function getRolePermissions (logonUser) {
   return permission
 }
 
-export { permissionInit,isDone }
+export { permissionInit,isDoneInit,GlobalData,domainConfig }
