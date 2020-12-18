@@ -1,14 +1,26 @@
 #! /usr/bin/env node
 console.log("bmm-cli is coming for you,hey hey ...");
 
-// 获取参数
-var config = {};
-process.argv.slice(2).forEach(item=>{
-	if(item=="-l"){
-		config.layer = true;
-	}
-})
-console.log(config)
+const { program } = require('commander')
+
+
+program
+.version(require('./package.json').version,'-v, --version, -V')
+
+program
+.command('create <name>')
+.description('create <name> project')
+.action(function(name,cmd) {
+    console.log(name,cmd)
+    var PATH = ".";
+    mkdir(PATH+'/vue',function(){
+        // mkdir(PATH + '/vue',function () {
+            checkDirectory(__dirname+'/templates/init-project',PATH+'/'+name,copy);
+        // })
+    })
+});
+
+
 
 
 var fs = require("fs");
@@ -53,9 +65,3 @@ function mkdir (path, fn) {
   })
 }
 
-var PATH = ".";
-mkdir(PATH+'/vue',function(){
-	// mkdir(PATH + '/vue',function () {
-		checkDirectory(__dirname+'/templates/init-project',PATH+'/vue',copy);
-	// })
-})

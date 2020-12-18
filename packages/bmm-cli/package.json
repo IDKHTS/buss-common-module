@@ -11,5 +11,8 @@
   "license": "ISC",
   "bin": {
     "bmm": "./index.js"
+  },
+  "dependencies": {
+    "commander": "^6.2.1"
   }
 }
